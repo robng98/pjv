@@ -6,8 +6,6 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 app.secret_key = b'secret'
 
-BASE_PATH =  '/uploads'
-abs_path = os.path.abspath(BASE_PATH)
 ALLOWED_EXT = {'txt', 'pdf'}
 
 def allowed_files(filename: str) -> bool :
