@@ -1,0 +1,24 @@
+{% extends 'layouts.html' %}
+
+{% block content %}
+   <!-- <form action="/" enctype="multipart/form-data" method="POST">
+       <input type="file" name="file">
+       <input type="submit" value="upload">
+   </form> -->
+
+   <form action="/" method="POST" enctype= "multipart/form-data">
+            
+    <div class="centralizar">
+        <br>
+        <input type="file" id="file" name="file" accept=".txt"/>
+        <label for="file">
+           Upload
+        </label>
+        <br><br>
+        <input type="submit" name="acao" value="Enviar" class="bot-enviar"/>
+
+    </div>
+
+   
+</form>
+{% endblock content %}
