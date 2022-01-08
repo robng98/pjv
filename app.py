@@ -76,3 +76,4 @@ def script(file):
                 cont_str = str(cont) + '\n'  
                 dest.write(cont_str)
     flash('File uploaded successfully')
+    
