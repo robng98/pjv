@@ -1,4 +1,4 @@
-import os
+import os, datetime
 from sys import path
 from flask import Flask, render_template, request, redirect, flash, url_for, send_file
 from werkzeug.utils import secure_filename
@@ -44,7 +44,12 @@ def index():
 
 @app.route('/download', methods=['GET'])
 def download():
-    return send_file('uploads/temp.txt', mimetype='text', attachment_filename='Diagnostico.txt', as_attachment=True)
+
+    date = datetime.datetime.now()
+
+    name = 'Diagnostico_' + date.strftime('%Y_%m_%d_%H_%M_%S') + '.txt'
+
+    return send_file('uploads/temp.txt', mimetype='text', attachment_filename=name, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
