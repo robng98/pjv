@@ -12,10 +12,6 @@ def allowed_files(filename: str) -> bool :
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXT
 
 
-def vamover(file):
-    for line in file:
-        flash(line)
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
